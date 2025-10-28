@@ -147,15 +147,4 @@ Example `data.json`:
 * [ ] Currency setting (JOD / USD / EUR)
 * [ ] Cloud sync with AWS S3
 
----
 
-## 🧠 Learning Purpose
-
-This project is part of **Python Phase 1**, focusing on:
-
-* Modular design
-* File I/O with JSON
-* Interactive terminal UI (TUI)
-* Basic event-driven programming
-
-This is a beginner-friendly path from simple scripts → real interactive tools.
