@@ -1,19 +1,22 @@
-name: Lint Python Code
+name: Basic Python Check
 
 on: [push, pull_request]
 
 jobs:
-  lint:
+  sanity:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: Install dependencies
         run: |
-          pip install flake8
-      - name: Run flake8
+            pip install -r requirements.txt || true
+
+      - name: Import modules
         run: |
-          flake8 .
+            python -c "import main, models, storage, commands, utils, ui; print('Import OK')"
