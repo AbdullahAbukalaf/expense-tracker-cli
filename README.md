@@ -147,4 +147,5 @@ Example `data.json`:
 * [ ] Currency setting (JOD / USD / EUR)
 * [ ] Cloud sync with AWS S3
 
+---
 
