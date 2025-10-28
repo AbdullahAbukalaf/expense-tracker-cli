@@ -9,18 +9,15 @@ Small helper utilities:
 from models import Expense
 
 def format_currency(amount: float) -> str:
-    """
-    Return amount like '28.65 JOD'.
-    """
-    # TODO
-    pass
+    return f"{amount:.2f} JOD"
 
 def format_expense_row(expense: Expense) -> str:
-    """
-    Return a single line string for the table row.
-    Example:
-    '#1  Coffee        2.75   food     2025-10-28'
-    (UI layer can use this to render rows)
-    """
-    # TODO
-    pass
+    return (
+        f"#{expense.id:<3} "
+        f"{expense.title:<15} "
+        f"{expense.description:<40} "
+        f"{format_currency(expense.amount):<10} "
+        f"{expense.category:<15} "
+        f"{expense.date.isoformat()}"
+    )
+

@@ -3,21 +3,35 @@ models.py
 Defines the data model for an expense.
 """
 
-from typing import TypedDict
-
-class Expense(TypedDict):
+from dataclasses import dataclass
+from datetime import date
+@dataclass
+class Expense:
     id: int
     title: str
+    description: str    
     amount: float
     category: str
-    date: str  # ISO timestamp, e.g. "2025-10-28T14:32:10"
+    date: str 
 
-def create_expense(expense_id: int, title: str, amount: float, category: str) -> Expense:
-    """
-    Build a new Expense object.
-    NOTE: actual timestamp will be added when we implement this.
-    """
-    # TODO:
-    # - from datetime import datetime
-    # - datetime.now().isoformat(timespec="seconds")
-    pass
+
+def expense_to_dict(expense : Expense) -> dict:
+    return {
+        "id" : expense.id,
+        "title" : expense.title,
+        "description" : expense.description,
+        "amount" : expense.amount,
+        "category" : expense.category,
+        "date" : expense.date.isoformat(),
+    }
+
+
+def expense_from_dict(data: dict) -> Expense:
+    return Expense( 
+        id=data["id"],
+        title=data["title"],
+        description=data["description"],
+        amount=float(data["amount"]),
+        category=data["category"],
+        date=date.fromisoformat(data["date"])
+    )
