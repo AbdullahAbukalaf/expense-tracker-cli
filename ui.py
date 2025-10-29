@@ -69,20 +69,18 @@ def run_app():
     """
     while True:
         # 1. Show header / summary
-        clear_screen()
+        # clear_screen()
         summary = get_summary()
-        print("\n============================")
-        print(
-            f"Total this month ({summary['month']}): {format_currency(summary['total_this_month'])}")
-        print("============================")
+        print("\n=====================================================================")
+        print(f"Total this month ({summary['month']}): {format_currency(summary['total_this_month'])}")
+        print("=====================================================================")
 
         # 2. Show current expenses (list view)
         expenses = get_all_expenses()
         if not expenses:
             print("No expenses recorded yet.")
         else:
-            print(
-                f"{'ID':<4} {'TITLE':<15} {'DESCRIPTION':<40}  {'AMOUNT':<10} {'CATEGORY':<15} DATE")
+            print(f"\n{'ID':<4} {'TITLE':<15} {'DESCRIPTION':<40} {'AMOUNT':<10} {'CATEGORY':<15} DATE")
             print("-" * 100)
             for e in expenses:
                 print(format_expense_row(e))
@@ -132,10 +130,9 @@ def run_app():
                 print(f"No expenses found for '{cat}'.")
             else:
                 print(f"\nFiltered by '{cat}':")
-                print(
-                    f"{'ID':<4} {'TITLE':<15} {'DESCRIPTION':<40}  {'AMOUNT':<10} {'CATEGORY':<15} DATE")
+                print(f"{'ID':<4} {'TITLE':<15} {'DESCRIPTION':<40} {'AMOUNT':<10} {'CATEGORY':<15} DATE")
                 print("-" * 100)
-                for e in expenses:
+                for e in filtered:
                     print(format_expense_row(e))
 
         else:
