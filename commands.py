@@ -49,6 +49,10 @@ def delete_expense(expense_id: int) -> bool:
 def get_all_expenses() -> List[Expense]:
     return load_expenses()
 
+def get_expense_by_id(id: int) -> list[Expense]:
+    expenses = load_expenses()
+    expense = [e for e in expenses if e.id == id]
+    return expense[0] if expense else None
 
 def filter_expenses_by_category(category: str) -> List[Expense]:
     expenses = load_expenses()
@@ -94,5 +98,44 @@ def get_summary() -> dict:
         "total_all_time": total_all_time,
         "total_this_month": total_this_month,
         "month": today.strftime("%Y-%m"),
+        "year": today.year,
+        # Format as 'October 2025'
+        "custom_date": today.strftime("%B %Y"),
         "top_categories_this_month": top_categories,
     }
+
+
+def update_expense(expense_id: int, field: str, value) -> bool:
+    """
+    Update a single field on a single expense.
+    Returns True if updated and saved, False if no expense with that ID exists.
+    """
+    expenses = load_expenses()
+
+    for e in expenses:
+        if e.id == expense_id:
+            if field == "title":
+                e.title = str(value)
+
+            elif field == "description":
+                e.description = str(value)
+
+            elif field == "amount":
+                e.amount = float(value)
+
+            elif field == "category":
+                e.category = str(value)
+
+            elif field == "date":
+                e.date = str(value)
+
+            else:
+                return False
+
+            save_expenses(expenses)
+            return True
+
+    # no matching ID found
+    return False
+
+    
