@@ -198,12 +198,3 @@ GitHub: [@AbdullahAbukalaf](https://github.com/AbdullahAbukalaf)
 
 ---
 
-✅ **Next step:**
-Copy this README into your repo, then run:
-
-```bash
-git add README.md
-git commit -m "Update README for v0.2.0"
-git tag -a v0.2.0 -m "Release v0.2.0 – Edit & Monthly summary"
-git push origin v0.2.0
-```
