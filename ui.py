@@ -248,8 +248,8 @@ def run_app():
         elif choice == "m":
             print("================ Monthly Summary ================")
             print(f"{c('Month:', RED)} {c(summary['custom_date'], GREEN)}")
-            print(f"\n{c("Total spent: ", RED)} {c(format_currency(summary["total_this_month"]), GREEN)}")
-            print(f"{c("Transactions: ", RED)} {c(len(expenses), GREEN)}")
+            print(f"\n{c('Total spent: ', RED)} {c(format_currency(summary['total_this_month']), GREEN)}")
+            print(f"{c('Transactions: ', RED)} {c(len(expenses), GREEN)}")
             print("\nSpending by category:")
             print("--------------------------------")
             top_categories = summary["top_categories_this_month"]
