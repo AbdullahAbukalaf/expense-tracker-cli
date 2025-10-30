@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Coffee",
+    "description": "morning Coffee",
+    "amount": 2.75,
+    "category": "food",
+    "date": "2025-10-29"
+  },
+  {
+    "id": 2,
+    "title": "Uber",
+    "description": "Uber to work",
+    "amount": 3.0,
+    "category": "transport",
+    "date": "2025-10-29"
+  },
+  {
+    "id": 3,
+    "title": "Groceries",
+    "description": "Groceries for apartment",
+    "amount": 22.9,
+    "category": "food",
+    "date": "2025-10-29"
+  },
+  {
+    "id": 4,
+    "title": "test",
+    "description": "test",
+    "amount": 15.0,
+    "category": "test",
+    "date": "2025-10-30"
+  }
+]

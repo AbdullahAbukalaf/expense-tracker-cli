@@ -9,7 +9,7 @@ from models import Expense
 import json
 from models import Expense, expense_from_dict, expense_to_dict
 
-DATA_FILE = Path("data.json")
+DATA_FILE = Path("expenses.json")
 
 def load_expenses() -> List[Expense]:
     if not DATA_FILE.exists():
